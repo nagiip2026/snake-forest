@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <strong>Ciyaar abeeso desktop ah oo kayn qurux badan ku dhex socota — miro ururso, dhibco hel, hana isku dhicin!</strong>
+  <strong>A desktop snake game set in a beautiful forest — collect fruit, score points, and don't crash!</strong>
 </p>
 
 <p align="center">
@@ -26,40 +26,40 @@
 
 ---
 
-## 🌲 Ciyaarta
+## 🌲 The game
 
-**Snake Forest** waa ciyaar abeeso (snake) ah oo desktop-ka Windows loogu talagalay. Ku hag abeesada kaynta, cun miraha dhalaalaya si ay u korto oo dhibco u hesho, kana fogow darbiyada iyo jirka abeesada. Muuqaal kayneed, sawirro iyo dhawaaqyo ciyaareed ayaa ku jira xirmada; ciyaartu internet uma baahna marka la rakibo.
+**Snake Forest** is a Windows desktop snake game. Guide the snake through the forest, eat glowing fruit to grow and score points, and avoid the forest walls and your own body. The package includes forest scenery, artwork, and in-game sound effects; the game does not need an internet connection once installed.
 
-Waxaa lagu dhisay **Python**, **PySide6** iyo **Pygame**. Settings-ka iyo natiijooyinka ciyaarta waxaa lagu kaydiyaa SQLite kombiyuutarkaaga oo keliya.
+It is built with **Python**, **PySide6**, and **Pygame**. Settings and game results are stored locally in SQLite on your computer.
 
-## ✨ Waxyaabaha ku jira
+## ✨ Features
 
-- 🌄 Shaashad furitaan iyo menu leh muuqaal kayneed iyo loading animation.
-- 🐍 Abeeso si grid ah u dhaqaaqda; miro kasta oo la cuno wuxuu kordhiyaa dhibcaha **10**.
-- 🏆 Best score, last score, tirada ciyaaraha iyo heerka ciyaaryahanka.
-- 🎚️ Saddex heer oo adag: **Easy, Normal, Hard**; iyo saddex xawaare: **Slow, Normal, Fast**.
-- ⏸️ Hakad, sii wadid, dib u bilowid iyo ku noqoshada menu-ga.
-- 🔊 Codad ciyaareed, codka la hagaajin karo, iyo doorasho codka lagu damiyo.
-- 🖥️ Full-screen, grid-ka looxa, iyo yareynta muuqaalada dhaqdhaqaaqa.
-- 💾 Dhibcaha iyo settings-ka oo maxalli ahaan u kaydsan; ma jiro account ama internet loo baahan yahay.
-- 📦 Portable Windows EXE hal-fayl ah iyo installer offline ah oo ikhtiyaari ah.
+- 🌄 Animated splash screen and menu with forest visuals and a loading animation.
+- 🐍 Grid-based snake movement; each fruit adds **10 points**.
+- 🏆 Best score, last score, total games, and player level.
+- 🎚️ Three difficulty levels: **Easy, Normal, Hard**; and three speeds: **Slow, Normal, Fast**.
+- ⏸️ Pause, resume, restart, and return to the menu.
+- 🔊 In-game sound effects, adjustable volume, and an option to turn sound off.
+- 🖥️ Full-screen mode, board grid, and reduced visual effects.
+- 💾 Scores and settings are saved locally; no account or internet connection is required.
+- 📦 A portable single-file Windows EXE and an optional offline installer.
 
-## 🎮 Sida loo ciyaaro
+## 🎮 How to play
 
-| Ficil | Furayaasha |
+| Action | Keys |
 |---|---|
-| Kor | `↑` ama `W` |
-| Hoos | `↓` ama `S` |
-| Bidix | `←` ama `A` |
-| Midig | `→` ama `D` |
-| Hakad / sii wad | `Space` ama `P` |
-| Full-screen | `F11` |
+| Up | `↑` or `W` |
+| Down | `↓` or `S` |
+| Left | `←` or `A` |
+| Right | `→` or `D` |
+| Pause / resume | `Space` or `P` |
+| Full screen | `F11` |
 
-Cun miraha si aad u hesho **10 dhibcood midkiiba** oo aad abeesada u dheereyso. Ha ku dhicin darbiga kaynta ama jirkaaga; abeesadu jihada si toos ah ugama noqon karto midda ka soo horjeedda. Haddii ciyaartu kugu adkaato ama aad rabto xawaare kale, ka beddel **Settings**.
+Eat fruit to earn **10 points per fruit** and grow the snake. Avoid the forest walls and your own body; the snake cannot immediately reverse into the opposite direction. If the game feels too difficult or you want a different speed, change it in **Settings**.
 
-## 🚀 Ku socodsii source code-ka
+## 🚀 Run from source
 
-Waxaad u baahan tahay **Python 3.11, 3.12 ama 3.13 oo 64-bit ah**. Marka hore fur terminal-ka gudaha folder-ka mashruuca, dabadeed:
+You need **64-bit Python 3.11, 3.12, or 3.13**. First, open a terminal in the project folder, then run:
 
 ```bat
 py -3.13 -m venv .venv
@@ -70,85 +70,85 @@ python tools\prepare_assets.py
 python main.py
 ```
 
-`build_exe.bat` wuxuu si otomaatig ah u diyaariyaa assets-ka; tallaabada `prepare_assets.py` ee kor ku xusan waa ikhtiyaar marka kaliya source-ka la wado. Tijaabooyinka logic-ga iyo kaydinta xogta waxaa lagu ordi karaa:
+`build_exe.bat` prepares the assets automatically; the `prepare_assets.py` step above is optional when running only from source. You can run the game-logic and data-persistence tests with:
 
 ```bat
 python -m pytest -q tests
 ```
 
-## 🪟 Sida Windows EXE dhab ah loo dhiso
+## 🪟 Build a Windows EXE
 
-Mashruucan wuxuu hore u leeyahay hab build oo Windows ah. **ZIP-gan source code ayuu wataa; EXE hore loo dhisay kuma jiro.** EXE-ga Windows waa in lagu dhisaa Windows 10/11 x64:
+The project already includes a Windows build process. **This ZIP contains the source code; it does not include a prebuilt EXE.** The Windows EXE must be built on Windows 10/11 x64:
 
-1. Ku rakib Python **3.11, 3.12 ama 3.13 (64-bit)**. Python 3.13 ayaa lagu talinayaa.
-2. Haddii aad rabto installer-ka, ku rakib **Inno Setup 6**. Tani waa ikhtiyaari; portable EXE-gu ma u baahna.
-3. Fur folder-ka `snake-forest` ee aad ZIP-ka ka furtay, kadib laba-jeer guji `build.bat` ama ka orod Command Prompt:
+1. Install **64-bit Python 3.11, 3.12, or 3.13**. Python 3.13 is recommended.
+2. If you want the installer, install **Inno Setup 6**. This is optional; the portable EXE does not need it.
+3. Open the `snake-forest` folder extracted from the ZIP, then double-click `build.bat` or run it from Command Prompt:
 
    ```bat
    build.bat
    ```
 
-`build.bat` wuxuu u yeeraa `build_exe.bat`. Build-ku wuxuu hubiyaa Python/dependencies, diyaariyaa assets-ka, ordiyaa tests-ka, PyInstaller ayuu ku xiraa game-ka iyo runtime-ka hal EXE, kadibna wuxuu ka ordiyaa `--verify-bundle` gudaha `%TEMP%` si loo hubiyo in assets-ka xirmadu jiraan. Haddii Inno Setup 6 la helo, wuxuu sameeyaa installer offline ah; haddii aan la helin, script-ku si cad ayuu u sheegaa in installer-ka la booday. Dependencies ka maqan waxaa laga yaabaa in internet looga soo dejiyo **kombiyuutarka build-ka**; EXE-ga la dhammeeyayna uma baahna internet ciyaarta ama rakibidda.
+`build.bat` calls `build_exe.bat`. The build checks Python and dependencies, prepares the assets, runs the tests, packages the game and runtime into a single EXE with PyInstaller, then runs `--verify-bundle` from `%TEMP%` to check that the bundled resources are present. If Inno Setup 6 is found, it creates an offline installer; otherwise, the script clearly reports that the installer was skipped. Missing dependencies may need to be downloaded over the internet on the **build computer**; the finished EXE does not need internet to install or play.
 
-### Faylasha build-ka
+### Build outputs
 
-- `dist\SnakeForest.exe` — portable hal-fayl ah; kan u dir qof kale haddii uu rabo inuu ciyaaro isaga oo aan rakibin. Kombiyuutarka qaadanaya waa Windows 10/11 x64, mana u baahna Python ama source folder-ka.
-- `installer-output\SnakeForest-Setup.exe` — installer-ka offline-ka ah; wuxuu soo baxaa **kaliya** marka Inno Setup 6 ku rakiban yahay kombiyuutarka build-ka. Wuxuu ku rakibaa `%LOCALAPPDATA%\Programs\Snake Forest`, wuxuuna ku daraa Start Menu shortcut iyo ikhtiyaar desktop shortcut.
+- `dist\SnakeForest.exe` — a portable single-file application; send this to someone who wants to play without installing. The recipient needs Windows 10/11 x64, but does not need Python or the source folder.
+- `installer-output\SnakeForest-Setup.exe` — the offline installer; it is created **only** when Inno Setup 6 is installed on the build computer. It installs to `%LOCALAPPDATA%\Programs\Snake Forest` and adds a Start Menu shortcut plus an optional desktop shortcut.
 
-Dhibcaha, settings-ka iyo log-yadu kama galaan folder-ka rakibidda. Waxaa lagu kaydiyaa `%LOCALAPPDATA%\SnakeForest` gudaha profile-ka isticmaalaha.
+Scores, settings, and logs are stored outside the installation folder, in `%LOCALAPPDATA%\SnakeForest` within the user's profile.
 
-### Prompt-ka EXE-ga
+### EXE build prompt
 
-Prompt-kan waa nooc Snake Forest loogu diyaariyey oo laga buuxiyey prompt-kii la soo gudbiyey. Faylka buuxa waxaa kale oo laga heli karaa [`PROMPT_WINDOWS_EXE.md`](PROMPT_WINDOWS_EXE.md); nuqulkii asalka ahaa waa [`PROMPT_FOR_REAL_EXE_ORIGINAL.txt`](PROMPT_FOR_REAL_EXE_ORIGINAL.txt).
+This prompt is a Snake Forest-specific version of the prompt provided, with the project details filled in. The full prompt is also available in [`PROMPT_WINDOWS_EXE.md`](PROMPT_WINDOWS_EXE.md); the original prompt is [`PROMPT_FOR_REAL_EXE_ORIGINAL.txt`](PROMPT_FOR_REAL_EXE_ORIGINAL.txt).
 
 <details>
-<summary>🧩 Guji si aad u aragto prompt-ka buuxa ee build-ka</summary>
+<summary>🧩 Click to view the full build prompt</summary>
 
 ```text
-Waxaan rabaa inaad dhamaystirto oo aad si sax ah u xirmayso project-kan desktop-ka ah ee Snake Forest, si uu ugu shaqeeyo Windows 10/11 x64.
+I want you to complete and correctly package this Snake Forest desktop project so that it runs on Windows 10/11 x64.
 
-SHARAXAADDA SOFTWARE-KA:
-Snake Forest waa ciyaar desktop ah oo Python lagu qoray. Waxay isticmaashaa PySide6 interface-ka, Pygame dhaqdhaqaaqa iyo looxa ciyaarta, SQLite-na waxay ku kaydisaa settings-ka iyo dhibcaha maxalli ahaan. Ciyaaryahanku wuxuu maska ku hagaa kayn, miro ayuu ururiyaa (10 dhibcood midkiiba), wuxuuna iska ilaaliyaa darbiyada iyo jirka maska. Ciyaartu waxay leedahay Easy/Normal/Hard, Slow/Normal/Fast, pause/resume, restart, sound effects, fullscreen, grid iyo reduced-effects settings. Assets-ka sawirrada, icons-ka, font-yada iyo WAV-yada waxay ku jiraan assets/.
+SOFTWARE DESCRIPTION:
+Snake Forest is a desktop game written in Python. It uses PySide6 for the interface, Pygame for movement and the game board, and SQLite to store settings and scores locally. The player guides a snake through a forest, collects fruit (10 points per fruit), and avoids the walls and the snake's own body. The game has Easy/Normal/Hard difficulty, Slow/Normal/Fast speed, pause/resume, restart, sound effects, full-screen, grid, and reduced-effects settings. Image, icon, font, and WAV assets are in assets/.
 
-SHURUUDAHA MUHIIMKA AH:
+IMPORTANT REQUIREMENTS:
 
-1. Marka hore baar project-ka hadda jira, build scripts-ka, `SnakeForest.spec`, `SnakeForest.iss`, dependencies-ka iyo tests-ka. Hagaaji waxa maqan adigoo ilaalinaya UI-ga, game logic-ga, xogta kaydsan iyo assets-ka. Ha tirtirin ama dib ha u qorin wax aan loo baahnayn. Ha sheegan in wax la tijaabiyey haddii aan la tijaabin.
+1. First inspect the existing project, build scripts, `SnakeForest.spec`, `SnakeForest.iss`, dependencies, and tests. Fix anything missing while preserving the UI, game logic, saved data, and assets. Do not delete or rewrite anything unnecessarily. Do not claim that something was tested unless it actually was.
 
-2. Diyaari labadan output:
-   - Portable hal-fayl ah: `dist\SnakeForest.exe`
-   - Installer offline ah: `installer-output\SnakeForest-Setup.exe`
+2. Prepare these two outputs:
+   - Portable single-file application: `dist\SnakeForest.exe`
+   - Offline installer: `installer-output\SnakeForest-Setup.exe`
 
-3. Portable EXE-gu ha ku jiro app-ka, Python runtime-ka, dependencies-ka iyo dhammaan assets-ka runtime-ka looga baahan yahay. Kombiyuutarka Windows-ka lagu ciyaarayo looma baahna Python, development tools, source folder ama internet. EXE-gu yuusan ku tiirsanaan current working directory-ga; assets-ka ku xalliso habka ku habboon PyInstaller one-file.
+3. The portable EXE must include the app, Python runtime, dependencies, and all runtime assets. The Windows computer used to play it must not need Python, development tools, the source folder, or internet. The EXE must not depend on the current working directory; resolve bundled assets in a way that works with PyInstaller one-file.
 
-4. Mashruucu waa Python, marka isticmaal PyInstaller one-file iyo `SnakeForest.spec` (ama si ula kac ah u cusboonaysii spec-ka haddii loo baahdo). Ku dar images, icons, fonts, sounds, hidden imports iyo dependencies dhab ahaan loo baahan yahay. Ha u beddelin hab packaging oo aan ku habboonayn stack-kan.
+4. This project uses Python, so use PyInstaller one-file and `SnakeForest.spec` (or deliberately update the spec if needed). Include the images, icons, fonts, sounds, hidden imports, and dependencies that are actually required. Do not switch to an unsuitable packaging method.
 
-5. Hagaaji/ilaali `build.bat` iyo `build_exe.bat` si ay:
-   - U hubiyaan 64-bit Python 3.11, 3.12 ama 3.13 iyo build dependencies-ka.
-   - U diyaariyaan assets-ka, u ordiyaan `python -m pytest -q tests`, una dhisaan one-file EXE-ga.
-   - U hubiyaan in `dist\SnakeForest.exe` la sameeyey.
-   - U ordiyaan `SnakeForest.exe --verify-bundle` iyaga oo working directory-ga ka dhigaya `%TEMP%`, si loo hubiyo in resources-ku ku jiraan bundle-ka oo aan laga soo akhrinayn source folder-ka.
-   - Haddii Inno Setup 6 (`ISCC.exe`) jiro, u dhisaan `installer-output\SnakeForest-Setup.exe`. Haddii aanu jirin, si cad u sheeg portable EXE-gu inuu diyaar yahay, installer-kana la booday; ha sheegin in installer la sameeyey.
-   - Haddii build ama hubin fashilanto, muujiyaan qaladka oo exit code aan-guul ahayn bixiyaan.
+5. Maintain or improve `build.bat` and `build_exe.bat` so they:
+   - Check for 64-bit Python 3.11, 3.12, or 3.13 and the build dependencies.
+   - Prepare the assets, run `python -m pytest -q tests`, and build the one-file EXE.
+   - Check that `dist\SnakeForest.exe` was created.
+   - Run `SnakeForest.exe --verify-bundle` with the working directory set to `%TEMP%`, to check that the resources are in the bundle and are not being read from the source folder.
+   - If Inno Setup 6 (`ISCC.exe`) is available, build `installer-output\SnakeForest-Setup.exe`. If it is not available, clearly report that the portable EXE is ready and the installer was skipped; do not claim that an installer was created.
+   - If the build or a check fails, show the error and return a non-success exit code.
 
-6. Installer-ku ha noqdo x64 oo offline ku rakibma. Ku rakib user-ku qori karo folder sida `%LOCALAPPDATA%\Programs\Snake Forest`, ku dar Start Menu shortcut iyo desktop shortcut ikhtiyaari ah. Shortcuts-ku ha tilmaamaan EXE-ga la rakibay, ee yaanay tilmaamin `dist` ama source folder. Settings, saves iyo logs ku hay `%LOCALAPPDATA%\SnakeForest`, ee ha ku qorin install folder-ka.
+6. The installer must be x64 and install offline. Install to a user-writable folder such as `%LOCALAPPDATA%\Programs\Snake Forest`, add a Start Menu shortcut and an optional desktop shortcut. Shortcuts must point to the installed EXE, not to the EXE in `dist` or the source folder. Keep settings, saves, and logs in `%LOCALAPPDATA%\SnakeForest`, not in the installation folder.
 
-7. Hubi in installer-ku xambaarsan yahay portable EXE-ga iyo wax kasta oo runtime-ka looga baahan yahay; rakibidda iyo ciyaartu yaanay u baahnayn internet. Dhammaadka sheeg meelaha saxda ah ee outputs-ka iyo midka loo diri karo kombiyuutar kale:
+7. Make sure the installer includes the portable EXE and everything else the runtime requires; installation and gameplay must not require internet. At the end, state the exact output locations and which file can be sent to another computer:
    - `dist\SnakeForest.exe`
-   - `installer-output\SnakeForest-Setup.exe` (kaliya haddii Inno Setup 6 la heli karo)
+   - `installer-output\SnakeForest-Setup.exe` (only if Inno Setup 6 is available)
 
-8. Orod checks-ka environment-ku kuu oggol yahay. Kala saar waxa la xaqiijiyey iyo waxa aan la tijaabin. Ha odhan Windows EXE ayaa shaqeeyey kombiyuutar Windows/nadiif ah haddii aadan halkaas ku tijaabin. Haddii deegaankaagu aanu ahayn Windows ama aanu dhisi karin Windows EXE, si cad u sheeg xaddidaadda; diyaari ama sax build scripts-ka oo sii tilmaamaha Windows-ka lagu ordo.
+8. Run the checks the current environment allows. Distinguish what was verified from what was not tested. Do not say that the Windows EXE worked on Windows or a clean computer if you did not test it there. If your environment is not Windows or cannot build a Windows EXE, say so clearly; prepare or fix the build scripts and provide the steps to run on Windows.
 
-Dhamee hawsha adigoo si toos ah u hagaajinaya faylasha project-ka; ha ku ekaan sharaxaad ama tusaale kood ah.
+Finish the task by editing the project files directly; do not stop at an explanation or sample code.
 ```
 
 </details>
 
-## 🗂️ Qaab-dhismeedka mashruuca
+## 🗂️ Project structure
 
-Liiska hoose wuxuu muujinayaa folder-yada iyo faylasha repo-ga oo dhan. Faylasha sawirrada, codadka iyo icons-ku waxay ku jiraan `assets/` waxaana EXE-ga lagu daraa iyada oo la adeegsanayo `SnakeForest.spec`.
+The list below shows every folder and file in the repository. Image, sound, and icon files are in `assets/` and are bundled into the EXE using `SnakeForest.spec`.
 
 <details>
-<summary>📁 Muuji dhammaan folder structure-ka</summary>
+<summary>📁 Show the complete folder structure</summary>
 
 ```text
 snake-forest/
@@ -244,35 +244,35 @@ snake-forest/
 
 </details>
 
-| Folder / fayl | Waxa uu qabto |
+| Folder / file | Purpose |
 |---|---|
-| `app/` | Game engine, settings, SQLite database, cod iyo maaraynta resources-ka. |
-| `ui/` | Shaashadaha splash, menu/dashboard, ciyaarta, settings iyo hagaha ciyaarta. |
-| `assets/images/` | Logo, app icons, background kaynta, miro iyo snake sprites. |
-| `assets/sounds/` | Lix cod oo WAV ah oo local ku shaqeeya. |
-| `assets/icons/fontawesome/` | SVG icons iyo shatiga/attribution-kooda. |
-| `assets/fonts/` | Font-yada lagu daray iyo liisankooda. |
-| `installer-assets/` | Sawirrada wizard-ka Inno Setup. |
-| `tests/` | Tijaabooyinka game engine-ka iyo xog-kaydinta. |
-| `tools/` | Script-ka diyaariya/sameeya assets-ka game-ka. |
-| `build.bat`, `build_exe.bat` | Bilowga build-ka Windows iyo samaynta EXE/installer-ka. |
-| `SnakeForest.spec` | Dejinta PyInstaller one-file bundle-ka. |
-| `SnakeForest.iss` | Dejinta Inno Setup offline installer-ka. |
-| `PROMPT_WINDOWS_EXE.md` | Prompt-ka Windows EXE-ga ee Snake Forest loo habeeyey. |
-| `PROMPT_FOR_REAL_EXE_ORIGINAL.txt` | Prompt-kii asalka ahaa ee la soo gudbiyey. |
+| `app/` | Game engine, settings, SQLite database, audio, and resource management. |
+| `ui/` | Splash, menu/dashboard, gameplay, settings, and game guide screens. |
+| `assets/images/` | Logo, app icons, forest backgrounds, fruit, and snake sprites. |
+| `assets/sounds/` | Six local WAV sound effects. |
+| `assets/icons/fontawesome/` | SVG icons and their license/attribution. |
+| `assets/fonts/` | Bundled fonts and their license. |
+| `installer-assets/` | Inno Setup wizard images. |
+| `tests/` | Game-engine and data-storage tests. |
+| `tools/` | Script that prepares/generates the game assets. |
+| `build.bat`, `build_exe.bat` | Windows build entry point and EXE/installer creation. |
+| `SnakeForest.spec` | PyInstaller one-file bundle configuration. |
+| `SnakeForest.iss` | Inno Setup offline installer configuration. |
+| `PROMPT_WINDOWS_EXE.md` | Windows EXE prompt tailored for Snake Forest. |
+| `PROMPT_FOR_REAL_EXE_ORIGINAL.txt` | The original submitted prompt. |
 
-## 🧰 Tignoolajiyada
+## 🧰 Technology
 
-- **Python 3.11–3.13** — luqadda iyo runtime-ka.
-- **PySide6** — desktop interface-ka.
-- **Pygame** — dhaqdhaqaaqa iyo sawiridda looxa ciyaarta.
-- **SQLite** — settings, dhibco iyo taariikh maxalli ah.
+- **Python 3.11–3.13** — language and runtime.
+- **PySide6** — desktop interface.
+- **Pygame** — gameplay movement and board rendering.
+- **SQLite** — local settings, scores, and history.
 - **PyInstaller** — portable one-file EXE.
-- **Inno Setup 6** — installer-ka Windows ee ikhtiyaariga ah.
+- **Inno Setup 6** — optional Windows installer.
 
 ## 👨‍💻 Developer
 
-**Nagiip Star** · 19 jir · ku nool Somaliland
+**Nagiip Star** · 19 years old · lives in Somaliland
 
 <p align="center">
   <img src="assets/images/developer-contact.gif" alt="Animated developer and contact banner: Nagiip Star, Somaliland, Telegram and WhatsApp" width="860" />
@@ -285,8 +285,8 @@ snake-forest/
 
 ## 📜 Open source & licenses
 
-Koodhka Snake Forest waa **open-source** waxaana lagu sii daayay **MIT License** — faahfaahinta ka eeg [`LICENSE`](LICENSE). Ogaysiisyada iyo shatiyada qaybaha dhinac saddexaad waa la ilaaliyey: eeg [`assets/icons/fontawesome/LICENSE.txt`](assets/icons/fontawesome/LICENSE.txt) iyo [`assets/fonts/LICENSE.txt`](assets/fonts/LICENSE.txt). Qaybahaas waxay raacayaan shatiyadooda u gaarka ah, mana beddelayso MIT-ga mashruuca.
+The Snake Forest code is **open source** and released under the **MIT License** — see [`LICENSE`](LICENSE) for details. Notices and licenses for third-party components have been preserved: see [`assets/icons/fontawesome/LICENSE.txt`](assets/icons/fontawesome/LICENSE.txt) and [`assets/fonts/LICENSE.txt`](assets/fonts/LICENSE.txt). Those components remain under their own licenses; the project's MIT license does not replace them.
 
 ---
 
-<p align="center"><sub>Waxaa lagu dhisay 🌿 Somaliland · Snake Forest © 2026 Nagiip Star</sub></p>
+<p align="center"><sub>Built with 🌿 in Somaliland · Snake Forest © 2026 Nagiip Star</sub></p>
