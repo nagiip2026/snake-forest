@@ -1,0 +1,31 @@
+Waxaan rabaa inaad dhisto software desktop ah oo Windows 10/11 x64 ku shaqeeya.
+
+SHARAXAADDA SOFTWARE-KA:
+[Halkan ku qor waxa software-ku qabanayo, cidda isticmaalaysa, iyo muuqaalka aad rabto.]
+
+Shuruudaha muhiimka ah:
+
+1. Marka hore baadh project-ka iyo qalabka uu hadda ku dhisan yahay. Haddii project hore jiro, sii wad oo hagaaji; ha tirtirin ama ha beddelin wax aan loo baahnayn. Haddii aan project jirin, dooro technology ku habboon oo hirgeli software-ka.
+
+2. Diyaari laba fayl oo Windows ah:
+   - Portable hal-file ah: `dist\AppName.exe`
+   - Installer offline ah: `installer-output\AppName-Setup.exe`
+
+3. Marka `AppName.exe` la furo, waa inuu ka koobnaadaa code-ka app-ka, runtime-ka loo baahan yahay, dependencies-ka, iyo dhammaan images, icons, sounds, fonts iyo assets kale. Kombiyuutarka lagu isticmaalayo looma baahna Python ama development tools, app-kuna waa inuu internet la’aan shaqeeyaa. EXE-gu yuusan ku tiirsanaan source-code folder-ka ama current working directory-ga.
+
+4. Haddii software-ku Python yahay, u isticmaal packager ku habboon sida PyInstaller one-file; si sax ah u dar assets-ka, hidden imports-ka iyo dependencies-ka loo baahan yahay. Haddii aanu Python ahayn, isticmaal habka packaging-ka ee saxda u ah technology-gaas—ha ku khasbin PyInstaller.
+
+5. Samee `build.bat` oo:
+   - Hubiya in build tools iyo dependencies-ku jiraan.
+   - Dhisa portable EXE-ga oo hubiya in build-ku guulaystay.
+   - Ku tijaabiya EXE-ga meel ka baxsan project folder-ka, tusaale ahaan TEMP, si loo xaqiijiyo inuusan ka akhrinayn source folder-ka.
+   - Haddii Inno Setup 6 ku rakiban yahay, sameeya installer-ka `installer-output\AppName-Setup.exe`.
+   - Haddii Inno Setup maqan yahay, si cad u sheega in portable EXE-gu diyaar yahay laakiin installer-ka aan la samayn; ha sheegin in installer la sameeyay.
+
+6. Installer-ku waa inuu app-ka ku rakibaa meel go’an oo isticmaalehu heli karo, sida `%LOCALAPPDATA%\Programs\AppName`, kuna daraa Start Menu shortcut iyo ikhtiyaar desktop shortcut. Shortcuts-ku waa inay u jeedaan EXE-ga la rakibay, ee ma aha EXE ku jira build ama source folder. Files-ka isticmaalaha—sida settings, saves iyo logs—ku kaydi `%LOCALAPPDATA%\AppName`, hana ku kaydin gudaha meesha app-ka lagu rakibay.
+
+7. Hubi in installer-ku app-ka iyo dhammaan waxyaabaha uu u baahan yahay ku darayo, uuna offline ku rakibmi karo. Dhammaadka, ii sheeg si cad meesha `AppName.exe` iyo `AppName-Setup.exe` laga helayo iyo midka aan kombiyuutar kale u dirayo.
+
+8. Samee oo orod tests-ka iyo checks-ka aad awooddo. Ha sheegan in app-ku ka shaqeeyay kombiyuutar nadiif ah ama Windows haddii aadan dhab ahaan ku tijaabin. Haddii deegaanka aad ku jirto aanu kuu saamaxayn inaad dhisto ama tijaabiso Windows EXE, ii sheeg taas si cad, oo diyaari `build.bat` iyo tallaabooyinka aan kombiyuutar Windows ah kaga ordi karo.
+
+Dhamee hirgelinta oo dhan; ha ku ekaan sharaxaad ama tusaale kood ah.

@@ -1,0 +1,13 @@
+SNAKE FOREST - INSTALLATION NOTICE
+
+Snake Forest is an offline desktop game.
+
+This installer copies the game to the folder you choose and adds a Snake Forest
+shortcut to the Start Menu. A desktop shortcut is created only if you keep that
+option selected during setup.
+
+The game does not need an internet connection to install or play. Game settings
+and scores are saved locally in your Windows user profile.
+
+By selecting "I agree", you confirm that you want to install Snake Forest on
+this computer.
